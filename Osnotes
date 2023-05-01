@@ -1,0 +1,61 @@
+Def :
+    An os is an program that manages computer hardware
+
+Types of os:
+    batch os
+    time sharing os
+    distributed os
+    network os
+    realtime os
+    multiprogramming os
+    proe4ssing / tasking os
+
+Goals of os  :
+    convenience
+    efficiency
+    both
+
+Function of os :
+    It is an interface between User and the hardware
+    allocation of resourses
+    Management Of memory , Security etc
+
+Basics of Operating System (Computer System Operation)
+
+Some basic knowledge of the structure of Computer System is required to understand
+how Operating Systems work.
+
+-> A modern general-purpose computer system consists of one or more CPUs and
+a number of device controllers connected through a common bus that provides access
+to shared memory.
+                            Printer
+       Mouse
+               Keyboard
+                                             Monitor
+Disks
+                  USB
+Disk
+                                               Video
+CPU
+Controller
+                Controller
+                                              Adapter
+                MEMORY
+
+mkdir: This command is used to create a new directory in a file system. The syntax is mkdir directory_name. For example, mkdir my_folder will create a new folder called "my_folder" in the current directory.
+
+dirname: This command returns the directory name of a given path. For example, dirname /home/user/documents/file.txt will return /home/user/documents.
+
+symlink: This command creates a symbolic link from one file to another. The syntax is ln -s target_file link_file. For example, ln -s /home/user/documents/file.txt /home/user/link_file will create a symbolic link from "/home/user/link_file" to "/home/user/documents/file.txt".
+
+readlink: This command prints the value of a symbolic link. The syntax is readlink link_file. For example, readlink /home/user/link_file will print "/home/user/documents/file.txt".
+
+link: This command creates a hard link from one file to another. A hard link is a reference to the same file, so changes to either file will affect both. The syntax is ln target_file link_file. For example, ln /home/user/documents/file.txt /home/user/link_file will create a hard link from "/home/user/link_file" to "/home/user/documents/file.txt".
+
+poll(): This is a system call used to monitor file descriptors for events. It allows a program to wait until one or more events occur on a set of file descriptors. For example, a program might use poll() to wait for data to become available on a network socket.
+
+stat: This command retrieves information about a file or directory, such as its size, ownership, and permissions. The syntax is stat filename. For example, stat /home/user/documents/file.txt will display information about the file "file.txt".
+
+sync: This command writes any pending changes to the file system to disk. It is typically used before shutting down a system to ensure that all changes have been saved.
+
+nftw(): This is a function in the C programming language used to recursively walk a directory tree. It allows a program to perform an action on each file or directory in the tree. For example, a program might use nftw() to count the number of files in a directory tree.
