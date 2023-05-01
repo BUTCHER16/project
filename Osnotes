@@ -59,3 +59,84 @@ stat: This command retrieves information about a file or directory, such as its 
 sync: This command writes any pending changes to the file system to disk. It is typically used before shutting down a system to ensure that all changes have been saved.
 
 nftw(): This is a function in the C programming language used to recursively walk a directory tree. It allows a program to perform an action on each file or directory in the tree. For example, a program might use nftw() to count the number of files in a directory tree.
+
+fork: This is a system call used to create a new process by duplicating the calling process. On Windows, the equivalent function is called CreateProcess.
+
+execl: This is a function used to execute a new program in the current process. On Windows, the equivalent function is called CreateProcess.
+
+wait: This is a system call used to wait for a child process to exit and retrieve its exit status. On Windows, the equivalent function is called WaitForSingleObject or WaitForMultipleObjects.
+
+pipe: This is a system call used to create a unidirectional communication channel between two processes. On Windows, the equivalent function is called CreatePipe.
+
+semaphores (sem_*): These are synchronization primitives used to control access to shared resources in a multi-process environment. On Windows, the equivalent functions are called CreateSemaphore, OpenSemaphore, and ReleaseSemaphore.
+
+shared memory (shm_*): This is a mechanism for two or more processes to share a region of memory. On Windows, the equivalent functions are called CreateFileMapping, MapViewOfFile, and UnmapViewOfFile.
+
+kill: This is a system call used to send a signal to a process or a group of processes. On Windows, the equivalent function is called TerminateProcess.
+
+scheduling parameters (nice, sched_*): These are system calls used to set the priority of a process or a thread. On Windows, the equivalent functions are called SetPriorityClass, SetThreadPriority, and SetThreadPriorityBoost.
+
+sleep: This is a function used to pause the execution of a program for a specified amount of time. On Windows, the equivalent function is called Sleep.
+
+mkfifo: This is a function used to create a named pipe, which is a special type of file that allows two processes to communicate with each other. On Windows, the equivalent function is called CreateNamedPipe.
+
+setpgid: This is a system call used to set the process group ID of a process. On Windows, there is no direct equivalent function, but the functionality can be achieved using process inheritance.
+
+socket(): This is a system call used to create a network socket, which is a communication endpoint for sending and receiving data over a network. On Windows, the equivalent function is called socket.
+
+memory management: 
+mmap: This is a system call used to map a file or a device into memory. On Windows, the equivalent functions are called CreateFileMapping and MapViewOfFile.
+mlock: This is a system call used to lock a region of memory into physical memory, preventing it from being swapped out to disk. On Windows, the equivalent function is called VirtualLock.
+mprotect: This is a system call used to change the access permissions of a region of memory. On Windows, the equivalent function is called VirtualProtect.
+madvise: This is a system call used to give advice to the kernel about the use of a region of memory. On Windows, there is no direct equivalent function, but similar functionality can be achieved using SetProcessWorkingSetSize or SetProcessWorkingSetSizeEx.
+brk(): This is a system call used to change the size of the data segment of the calling process. On Windows, there is no direct equivalent function, but similar functionality can be achieved using VirtualAlloc.
+
+utilities: 
+regular expressions (reg*): These are functions used to search and manipulate text using patterns. On Windows, the equivalent functions are called regular expressions, but there are various libraries available, such as PCRE and Boost.Regex, which provide similar functionality to the POSIX regular expression functions.
+
+
+some of the commands
+
+    cp: To copy a file, you can use the command cp source_file destination. For example, cp file.txt backup.txt will create a copy of file.txt called backup.txt.
+
+    mv: To move or rename a file, you can use the command mv source_file destination. For example, mv file.txt new_folder/file_renamed.txt will move file.txt to the folder new_folder and rename it to file_renamed.txt.
+    
+    rm: To remove a file, you can use the command rm file. For example, rm file.txt will delete the file file.txt.
+    
+    ps: To list active processes, you can use the command ps. For example, ps aux will show a detailed list of all processes currently running on the system.
+    
+    top: To display information about system processes and resource usage, you can use the command top. This will display a live view of system processes and their resource usage.
+    
+    grep: To search for a pattern in a file or input, you can use the command grep pattern file. For example, grep "error" log.txt will display all lines in log.txt that contain the word "error".
+    
+    sed: To edit a file or input stream, you can use the command sed 's/pattern/replacement/g' file. For example, sed 's/error/warning/g' log.txt will replace all occurrences of the word "error" with "warning" in log.txt.
+    
+    awk: To process text or data, you can use the command awk '{ commands }' file. For example, awk '{ print $1 }' data.txt will print the first field of each line in data.txt.
+    
+    find: To search for files or directories in a directory hierarchy, you can use the command find directory -name "pattern". For example, find /home/user -name "*.txt" will find all files in the directory /home/user that have a .txt extension.
+    
+    tar: To archive files and directories, you can use the command tar -cvf archive.tar file_or_directory. For example, tar -cvf backup.tar /home/user/documents will create an archive of the directory /home/user/documents.
+    
+    unzip: To extract files from a compressed archive, you can use the command unzip archive.zip. For example, unzip backup.zip will extract all files from the archive backup.zip.
+    
+    curl: To transfer data from or to a server, you can use the command curl url. For example, curl https://www.example.com will display the HTML code of the website https://www.example.com.
+    
+    ssh: To securely connect to a remote server, you can use the command ssh username@hostname. For example, ssh user@example.com will connect to the server example.com as the user user.
+    
+    scp: To securely copy files between hosts, you can use the command scp source_file username@hostname:destination. For example, scp file.txt user@example.com:/home/user/ will copy the file file.txt to the directory /home/user/ on the server example.com.
+    
+    rsync: To synchronize files and directories between hosts, you can use the command rsync source destination. For example, rsync /home/user/documents user@example.com:/home/user/backup will synchronize the directory /home/user/documents on the local machine
+
+    ls: This command lists the files and directories in the current directory. When you type ls in the terminal and press enter, it will display a list of all the files and directories in the current directory.
+
+    cd: This command changes the current directory to the one specified. For example, typing cd Documents in the terminal will change the current directory to the "Documents" directory.
+
+    cp: This command copies a file or directory from one location to another. For example, typing cp file.txt /home/user/Documents/ in the terminal will copy the "file.txt" file to the "Documents" directory.
+
+    rm: This command removes a file or directory. For example, typing rm file.txt in the terminal will remove the "file.txt" file from the current directory.
+
+    ps: This command displays a list of running processes on the system. When you type ps in the terminal and press enter, it will display a list of all the running processes on your system.
+
+    grep: This command searches for a specific string or pattern in a file. For example, typing grep "hello" file.txt in the terminal will search for the word "hello" in the "file.txt" file.
+
+    chmod: This command changes the permissions of a file or directory. For example, typing chmod 755 file.txt in the terminal will give the owner of "file.txt" read, write, and execute permissions, and others only read and execute permissions.
