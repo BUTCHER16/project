@@ -1,0 +1,21 @@
+To create a database 
+    create database (name of the database);
+
+To use my database as the schema
+    use (name of the database);
+
+To drop a database 
+    drop database (name of the database);
+
+To set the database to readonly
+    alter database (name of the database) read only = 1;
+    we can't make any modification if it is readonly mode 
+
+To disable read-only mode
+    alter database (name of the database) read only = 0;
+
+To create a Table
+    create table name_of_the_table();
+
+To select a Table
+    select * from name_of_the_table;
