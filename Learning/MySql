@@ -68,6 +68,22 @@ To insert rows
 
     select * from employees;
 
+to insert in specific column
+
+    insert into employees (employee_id,fname,lname)
+    values(5,"deepak","raj");
+
+    select * from employees;
+
+To SELECT*
+
+    select *
+    from employees
+    where employee_id = 1;
+    //it will print the following content
+
+
+
 
     
 
