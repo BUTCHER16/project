@@ -9,7 +9,7 @@ To drop a database
 
 To set the database to readonly
     alter database (name of the database) read only = 1;
-    we can't make any modification if it is readonly mode 
+    we cant make any modification if it is readonly mode 
 
 To disable read-only mode
     alter database (name of the database) read only = 0;
@@ -35,4 +35,35 @@ To Alter the table
 To modify the content
     alter table employees
     modify column email varchar(100); to change the value for the varchar
+
+To alter the heading of the table
+    alter table employees
+    modify email varchar(100)
+    after Last_name;
+
+    select *from employees
+
+AUTO COMMIT , COMMIT , ROLLBACK
+
+    SET AUTOCOMMIT = OFF;
+    COMMIT; //TO SET SET AUTOCOMMIT OFF
+
+    DELETE FROM INFO; // BUT I DIDNT ADD WHERE CLASS SO IT WILL DELETE ALL THE DATA
+    SELECT * FROM INFO;
+
+    //TO UNDO THE STATEMENT ENTER ROLLBACK STATEMENT
+    ROLLBACK;
+
+CURRENT_DATE & CURRENT_TIME
+
+    CREATE TABLE test(
+        my_date DATE,
+        MY_TIME TIME,
+        MY_DAY_TIME DATETIME
+    ); //IT WILL CREATE A TABLE 
+
+    
+
+
+
 
