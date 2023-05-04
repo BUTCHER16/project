@@ -62,6 +62,13 @@ CURRENT_DATE & CURRENT_TIME
         MY_DAY_TIME DATETIME
     ); //IT WILL CREATE A TABLE 
 
+To insert rows 
+    insert into employees
+    values(5,"deepak","raj",20.25,"2021-02=23");
+
+    select * from employees;
+
+
     
 
 
