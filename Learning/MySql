@@ -237,7 +237,62 @@ to insert CURRENT_DATE & CURRENT_TIME
     FROM TRANS RIGHT JOIN customers
     ON TRANS.CUSTOMER_ID = customers.CUSTOMER_ID;// IT WILL DISPLAY ALL THE ELEMENT FROM THE RIGHT
 
-    
+## FUNCTIONS IN SQL
+    SOME MAIN FUNCTION FOR BEGINERS
+    #COUNT
+    select count(amount)
+    from trans;
 
+    select count(amount) as c
+    from trans;
 
+    #MAXIMUM
 
+    select MAX(amount) as MAXIMUN
+    from trans;
+
+    #MINIMUM
+    select MIN(amount) as MINIMUN
+    from trans;
+
+    #AVERAGE
+    select AVG(amount) as AVERAGE
+    from trans;
+
+    #SUM
+    select SUM(amount) as SUM
+    from trans;
+
+    #CONCAT
+    select CONCAT(FNAME," ",LNAME) as FULL_NAME
+    from employees;
+
+## AND OR NOT
+
+    ALTER TABLE EMPLOYEES
+    ADD COLUMN JOB VARCHAR(25) AFTER HOURLY_PAY;
+    SELECT * FROM EMPLOYEES
+
+    UPDATE employees
+    SET JOB = "CEO"
+    where employee_id = 1 ;
+
+    select * FROM employees;
+
+    SELECT * FROM EMPLOYEES
+    WHERE JOB = "ITES" OR JOB = "CEO";
+
+    SELECT * FROM EMPLOYEES
+    WHERE HIRE_DAY <= "2023-03-16" AND JOB = "CEO";
+
+    SELECT * FROM EMPLOYEES
+    WHERE NOT JOB = "CEO";
+
+    SELECT * FROM EMPLOYEES
+    WHERE NOT JOB = "CEO" AND NOT JOB = "ITES";
+
+    SELECT * FROM EMPLOYEES
+    WHERE HIRE_DATE between "2021-01-23" AND "2023-01-23";
+
+    SELECT * FROM EMPLOYEES
+    WHERE JOB IN ("CEO","MANAGER");
