@@ -296,3 +296,83 @@ to insert CURRENT_DATE & CURRENT_TIME
 
     SELECT * FROM EMPLOYEES
     WHERE JOB IN ("CEO","MANAGER");
+
+## wild cards % and _
+    select * from customers
+    where first_name like "a%";
+
+    select * from customers
+    where HIRE_DATE like "2023%";
+
+    select * from employees
+    where hire_date like "__21-__-__";
+
+    select * from employees
+    where job like "_a%"
+
+#ORDER BY
+    select * from employees
+    order by lname; // IT WILL PRINT IN ASCENDING ORDER
+    
+    select * from employees
+    order by lname desc; // IT WILL PRINT IN DESCENDING ORDER
+
+##LIMIT //
+1 -- LIMIT clause is used to limit the number of records.
+2 -- Useful if you' re working with a lot of data.
+3 -- Can be used to display a large data on pages (pagination).
+
+
+    select * from employees
+    LIMIT 2;
+
+    select * from employees
+    order by FNAME LIMIT 2;
+
+##UNION UNION combines the results of two or more SELECT statements
+
+    SELECT fname, lname FROM employees
+    UNION
+    SELECT first_name, last_name FROM customers;
+
+##self join // SELF JOIN join another copy of a table to itself used to compare rows of the same table helps to display a heirarchy of data
+
+    ALTER TABLE customers
+    ADD referral_id INT;
+    SELECT * FROM customers;
+
+    UPDATE customers
+    SET referral_id = 1
+    WHERE customer_id = 2;
+    SELECT * FROM customers;
+
+    select  a.customer_id , a.first_name , a.last_name,
+	 concat(b.first_name ," ", b.last_name) as "referred_by"
+    from customers as a
+    left join customers as b
+    on a.referral_id = b.CUSTOMER_ID;
+
+    alter table employees
+    add supervisor int;
+    select * from employees
+
+    update employees
+    set supervisor_id = 1
+    where employee_id = 5;
+    select * from employees
+
+    select  a.fname , a.lname,
+		concat(b.fname, " ",b.lname) as reports_to
+    from employees as a
+    inner join employees as b
+    on a.supervisor_id = b.employee_id;
+
+##Views
+--a virtual table based on the result-set of an SQL statement
+--The fields in a view are fields from one or more real tables in the database
+--They' re not real tables, but can be interacted with as if they were
+
+    
+
+
+
