@@ -372,7 +372,59 @@ to insert CURRENT_DATE & CURRENT_TIME
 --The fields in a view are fields from one or more real tables in the database
 --They' re not real tables, but can be interacted with as if they were
 
-    
+    CREATE VIEW employee_attendance AS
+    SELECT first_name, last_name
+    FROM employees;
+
+    SELECT * FROM employee_attendance
+    ORDER BY last_name ASC;
+
+    ALTER TABLE customers
+    ADD COLUMN email VARCHAR ( (50);
+    SELECT * FROM customers;
+
+    UPDATE customers
+    SET email = "ppuff@gmail.com"
+    WHERE customer_id = 4;
+    SELECT * FROM customers;
+
+    CREATE VIEW customer_emails AS
+    SELECT email
+    FROM customers;
 
 
+##INDEX (BTree data structure)
+-Indexes are used to find values within a specific column more quickly
+MySQL normally searches sequentially through a column
+The longer the column, the more expensive the operation is
+UPDATE takes more time, SELECT takes less time
 
+
+    create index least_name_idx
+    on customers(last_name);
+
+    select * from customers
+    where LAST_NAME = "puff";   
+
+##subqueries
+
+    select avg(hourly_pay) from employees;
+
+    select fname , lname , hourly_pay ,(select avg(hourly_pay) from employees) as avg_pay
+    from employees;
+
+
+    select fname , lname , hourly_pay
+    from employees
+    where hourly_pay < (select avg(hourly_pay) from employees);
+
+    select fname , lname , hourly_pay ,(select avg(hourly_pay) from employees) as avg_pay
+    from employees; 
+
+    select first_name , last_name
+    from customers
+    where customer_id in
+
+    (select distinct customer_id
+    from trans
+    where CUSTOMER_ID is not null);
