@@ -428,3 +428,10 @@ UPDATE takes more time, SELECT takes less time
     (select distinct customer_id
     from trans
     where CUSTOMER_ID is not null);
+
+##group by 
+
+    select sum(amount) , order_date
+    from trans
+    group by order_date;
+
